@@ -342,6 +342,20 @@ input, select {
   }
 }
 
+.flatpickr-calendar {
+  font-family: "Poppins", sans-serif;
+  border-radius: 12px;
+  background: #fffdfb;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.flatpickr-day.selected, 
+.flatpickr-day.startRange, 
+.flatpickr-day.endRange {
+  background: #e5c7b4;
+  color: #000;
+}
+
 .btn-reservar {
   background-color: var(--dorado);
   color: white;

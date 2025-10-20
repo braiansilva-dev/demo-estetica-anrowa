@@ -31,6 +31,30 @@ document.addEventListener("DOMContentLoaded", () => {
   const dd2 = String(limite.getDate()).padStart(2, "0");
   fechaInput.max = `${yyyy2}-${mm2}-${dd2}`;
 
+  // Activar Flatpickr
+flatpickr("#fecha", {
+  dateFormat: "Y-m-d",
+  minDate: "today",
+  maxDate: new Date().fp_incr(30), // máximo 30 días desde hoy
+  disable: [
+    function(date) {
+      // Desactivar domingos
+      return (date.getDay() === 0);
+    }
+  ],
+  locale: {
+    firstDayOfWeek: 1,
+    weekdays: {
+      shorthand: ["Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb"],
+      longhand: ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"]
+    },
+    months: {
+      shorthand: ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"],
+      longhand: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]
+    }
+  }
+});
+
   // Bloquear domingos automáticamente en el calendario
   fechaInput.addEventListener("input", () => {
     const fechaSeleccionada = new Date(fechaInput.value + "T00:00:00");
