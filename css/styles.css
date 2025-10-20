@@ -1,0 +1,722 @@
+:root {
+  --rosa: #e9b7c5;
+  --beige: #fff8f4;
+  --dorado: #caa472;
+  --texto: #4d4d4d;
+
+  --fuenteHeader: "Cormorant Garamond", serif;
+  --fuenteGenera: "Poppins", sans-serif;
+}
+
+html {
+  font-size: 62.5%; 
+  scroll-behavior: smooth
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--beige);
+  color: var(--texto);
+  line-height: 1.6;
+  text-align: center;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%; /* evitar que iOS aumente el tamaño del texto automáticamente */
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+header {
+  background-color: var(--rosa);
+  padding: 1.5rem;
+  color: white;
+  font-family: var(--fuenteHeader);
+}
+
+.logo {
+  width: 15rem;
+  height: auto;
+}
+
+.slogan {
+    font-size: 1.6rem;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  background-color: white;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid #ddd;
+}
+
+nav a {
+  color: var(--texto);
+  font-family: var(--fuenteGenera);
+  text-decoration: none;
+  font-weight: bold;
+  padding: 1rem;
+  font-size: 1.2rem;
+}
+
+nav a:hover {
+    color: var(--rosa);
+}
+
+.section {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+#reservaForm {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin: 0 auto;
+  max-width: 400px;
+}
+
+input, select {
+  padding: 0.8rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.btn-reservar {
+  background-color: var(--dorado);
+  color: white;
+  border: none;
+  padding: 1rem;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-reservar:hover {
+  opacity: 0.9;
+}
+
+/* Pop-up */
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(6px);
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  background: white;
+  border-radius: 10px;
+  padding: 2rem;
+  width: 80%;
+  max-width: 350px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.popup button {
+  background-color: var(--rosa);
+  border: none;
+  padding: 0.7rem 1.2rem;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+/* INICIO */
+.inicio {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-self: center;
+}
+
+.inicio-titulo {
+    font-size: 1.8rem;
+    text-align: center;
+    font-weight: 400;
+    padding-top: 3rem;
+    
+}
+
+.p-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+}
+
+.foto-anto {
+  height: 30rem;
+  width: auto;
+  margin-top: 3rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 10px rgba(167, 124, 124, 0.603);
+}
+
+.inicio-p {
+  font-size: 1.4rem;
+  text-align: left;
+}
+
+.inicio a {
+  font-size: 1.8rem;
+  text-decoration: none;
+  color: var(--texto);
+}
+
+.inicio a span {
+  color: var(--rosa);
+  cursor: pointer;
+}
+
+.inicio a span:hover {
+  color: var(--dorado);
+}
+
+.redes-sociales {
+  display: flex;
+  gap: 1.5rem;
+  padding-top: 1rem;
+  padding-bottom: 4rem;
+}
+
+.redes-sociales a svg {
+  height: 2.5rem;
+  width: auto;
+  color: var(--dorado);
+  cursor: pointer;
+}
+
+.redes-sociales a svg:hover {
+  color: var(--rosa);
+}
+
+
+
+/* SERVICIOS */
+.servicios-titulo {
+    font-size: 2.5rem;
+    color: var(--dorado);
+    font-family: var(--fuenteHeader);
+    padding-top: 3rem;
+    padding-bottom: 1.5rem;
+}
+
+.servicios-lista {
+  list-style: none;
+  padding: 0;
+  width: 90%;
+  margin: 0 auto;
+  line-height: 3rem;
+  font-size: 1.3rem;
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  text-align: center;
+  padding-bottom: 4rem;
+}
+
+.servicios-lista li {
+    text-align: start;
+}
+
+
+/* AGENDA */
+.agenda-titulo {
+  font-size: 2.5rem;
+  color: var(--dorado);
+  font-family: var(--fuenteHeader);
+  margin-bottom: 2rem;
+  letter-spacing: 0.5px;
+}
+
+#reservaForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin: 0 auto;
+  max-width: 400px;
+  padding: 2rem;
+  background: rgba(255, 248, 244, 0.7);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(202, 164, 114, 0.15);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+#reservaForm:hover {
+  box-shadow: 0 6px 18px rgba(202, 164, 114, 0.25);
+}
+
+#reservaForm label {
+  text-align: left;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: var(--texto);
+}
+
+/* Inputs y selects */
+#reservaForm input,
+#reservaForm select {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.3rem;
+  border-radius: 8px;
+  border: 1px solid #e5c7b4;
+  background-color: rgba(255, 255, 255, 0.85);
+  font-family: var(--fuenteGenera);
+  color: var(--texto);
+  transition: all 0.3s ease;
+}
+
+/* Focus (cuando el usuario selecciona fecha, hora o servicio) */
+#reservaForm input:focus,
+#reservaForm select:focus {
+  outline: none;
+  border-color: var(--dorado);
+  background-color: #fffdfb;
+  box-shadow: 0 0 6px rgba(202, 164, 114, 0.3);
+}
+
+/* Estilo para el date y time picker */
+#reservaForm input[type="date"],
+#reservaForm input[type="time"] {
+  appearance: none;
+  -webkit-appearance: none;
+  color: var(--texto);
+  background-image: linear-gradient(to right, #fffdfb, #fffaf7);
+  cursor: pointer;
+}
+
+/* Estilo específico para el input de hora: más compacto y centrado */
+#reservaForm input[type="time"] {
+  max-width: 14rem; /* ancho reducido para que no ocupe todo el formulario */
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  padding-left: 0.6rem;
+  padding-right: 0.6rem;
+}
+
+/* En pantallas grandes permitir que crezca un poco */
+@media (min-width: 768px) {
+  #reservaForm input[type="time"] {
+    max-width: 16rem;
+  }
+}
+
+/* Ajustes móviles: mantener fuente >=16px (1.6rem con html 62.5%) y tamaño cómodo */
+@media (max-width: 576px) {
+  #reservaForm input[type="time"] {
+    font-size: 1.6rem;
+    max-width: 14rem;
+  }
+
+  /* Alineación del label para que quede visualmente bien con el input corto */
+  #reservaForm label[for="hora"] {
+    display: block;
+    margin-bottom: 0.2rem;
+    text-align: left;
+    font-size: 1.4rem;
+  }
+}
+
+.btn-reservar {
+  background-color: var(--dorado);
+  color: white;
+  border: none;
+  padding: 1.2rem;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(202, 164, 114, 0.2);
+}
+
+.btn-reservar:hover {
+  background-color: #b58a5e;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(202, 164, 114, 0.3);
+}
+
+
+
+/* CONTACTO */
+.contacto-titulo {
+    font-size: 2.5rem;
+    font-family: var(--fuenteHeader);
+    color: var(--dorado);
+    padding-top: 3rem;
+    padding-bottom: 1.5rem;
+}
+
+.contacto-p {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    justify-self: center;
+    padding-bottom: 1.2rem;
+    font-size: 1.3rem;
+}
+
+.btn-whatsapp-contacto {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  width: 15rem;
+  gap: 0.5rem;
+  background-color: #25d366;
+  color: white;
+  padding: 0.8rem 1.2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.2s ease;
+  margin: 0 auto;
+}
+
+.btn-whatsapp-contacto:hover {
+  background-color: #1ebe5d;
+}
+
+.map {
+  margin-top: 4rem;
+}
+
+.map iframe {
+  width: 100%;
+  height: 300px;
+  border: 0;
+  border-radius: 8px;
+}
+
+/* FOOTER */
+.footer {
+  background: rgba(233, 183, 197, 0.95); /* translúcido */
+  backdrop-filter: blur(8px);
+  color: white;
+  font-family: var(--fuenteGenera);
+  margin-top: 4rem;
+  padding-top: 3rem;
+}
+
+.footer-contenido {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.footer-logo img {
+  width: 100px;
+  height: auto;
+  margin-bottom: 0.5rem;
+}
+
+.footer-logo p {
+  font-size: 1.3rem;
+  font-style: italic;
+}
+
+.footer-enlaces h4,
+.footer-contacto h4 {
+  font-family: var(--fuenteHeader);
+  font-weight: 600;
+  font-size: 1.6rem;
+  margin-bottom: 0.8rem;
+  color: var(--dorado);
+}
+
+.footer-enlaces ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-enlaces li {
+  margin: 0.4rem 0;
+}
+
+.footer-enlaces a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.3rem;
+  transition: color 0.3s ease;
+}
+
+.footer-enlaces a:hover {
+  color: var(--dorado);
+}
+
+.footer-contacto {
+  text-align: center;
+}
+
+.footer-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #25d366;
+  color: white;
+  padding: 0.7rem 1.2rem;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.footer-whatsapp:hover {
+  transform: scale(1.05);
+  background-color: #1ebe5d;
+}
+
+.footer-direccion {
+  font-size: 1.2rem;
+  margin-top: 0.8rem;
+  color: #fff;
+  opacity: 0.9;
+}
+
+.footer-bottom {
+  background: rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 1rem;
+  font-size: 1.2rem;
+  margin-top: 2rem;
+}
+
+
+/* RESPONSIVE */
+
+
+/* SM - Small (teléfonos grandes en horizontal) */
+@media (min-width: 576px) {
+  .servicios-lista { 
+    width: 60%;
+  }
+}
+
+/* MD - Medium (tablets vertical/horizontal) */
+@media (min-width: 768px) {
+  body {
+    font-size: 1.6rem;
+  }
+
+  header {
+    padding: 2rem;
+  }
+
+  nav ul {
+    justify-content: center;
+    gap: 3rem;
+  }
+
+  .nav ul li a {
+    font-size: 1.8rem;
+  }
+
+  .logo {
+    width: 18rem;
+  }
+
+  .section {
+    padding: 4rem 2rem;
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  .inicio-titulo {
+    font-size: 2rem;
+    max-width: 700px;
+  }
+
+  .inicio-p {
+    font-size: 1.5rem;
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .servicios-lista {
+    font-size: 1.5rem;
+    width: 80%;
+    margin: 0 auto;
+  }
+
+    #reservaForm {
+    max-width: 500px;
+    padding: 3rem;
+  }
+
+  .agenda-titulo {
+    font-size: 2.2rem;
+  }
+
+  #reservaForm input,
+  #reservaForm select {
+    font-size: 1.4rem;
+  }
+
+  .btn-reservar {
+    font-size: 1.5rem;
+  }
+
+  .map iframe {
+    height: 400px;
+  }
+
+  .footer-contenido {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .footer-logo img {
+    width: 120px;
+  }
+
+  .footer-logo p {
+    font-size: 1.4rem;
+  }
+
+  .footer-enlaces a {
+    font-size: 1.4rem;
+  }
+}
+
+/* LG - Large (laptops / notebooks) */
+@media (min-width: 992px) {
+  .logo {
+    width: 19rem;
+    height: auto;
+  }
+
+  .slogan {
+      font-size: 2rem;
+  }
+
+    .servicios-lista {
+    width: 60%;
+  }
+}
+
+/* XL - Extra Large (desktops grandes) */
+@media (min-width: 1200px) {
+    body {
+    font-size: 1.8rem;
+    margin: 0 auto;
+  }
+
+
+  nav ul {
+    justify-content: center;
+    gap: 4rem;
+  }
+
+  .section {
+    max-width: 1000px;
+    padding: 5rem 3rem;
+  }
+
+  .inicio-titulo {
+    font-size: 2.4rem;
+  }
+
+  .inicio-p {
+    font-size: 1.6rem;
+    line-height: 1.8;
+  }
+
+  .servicios-lista {
+    font-size: 1.6rem;
+    width: 70%;
+  }
+
+  .map iframe {
+    height: 500px;
+    border-radius: 12px;
+  }
+
+  .footer-contenido {
+    padding: 0 4rem;
+  }
+
+  .footer {
+    padding-top: 4rem;
+  }
+}
+
+
+/* Fix para móviles: inputs/selects más compactos y evitar apariencia excesiva del select nativo */
+@media (max-width: 576px) {
+  /* Formularios más compactos en móviles */
+  #reservaForm {
+    padding: 1rem;
+    gap: 0.5rem;
+  }
+
+  /* Inputs, selects y botones del formulario: evitar auto-zoom en iOS usando >=16px */
+  #reservaForm input,
+  #reservaForm select,
+  #reservaForm button {
+    font-size: 1.6rem; /* 16px — previene el auto-zoom en iOS */
+    padding: 0.6rem 0.8rem;
+    line-height: 1.15;
+  }
+
+  /* Forzar apariencia consistente en Safari/iOS para selects */
+  #reservaForm select {
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  /* Select específico (hora) más compacto y con posición de icono */
+  #reservaForm select#hora {
+    background-position: right 0.9rem center;
+    background-repeat: no-repeat;
+    background-size: 1.2rem;
+    max-height: 4rem;
+  }
+
+  /* Opciones dentro del select, algunos navegadores respetan este estilo */
+  select option {
+    font-size: 1.6rem;
+    padding: 0.3rem 0.4rem;
+  }
+
+  /* Botón reservar tamaño adecuado en móvil */
+  .btn-reservar {
+    font-size: 1.6rem;
+    padding: 0.85rem;
+  }
+
+  /* Evitar que iframes/mapas empujen el layout en móvil */
+  .map iframe {
+    height: 240px;
+  }
+}

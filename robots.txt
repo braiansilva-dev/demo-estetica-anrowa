@@ -1,0 +1,6 @@
+# Permitir indexación general y señalar sitemap
+User-agent: *
+Allow: /
+
+# Reemplazá "tudominio.com" por tu dominio real (ej: espacioanrowa.com)
+Sitemap: https://tudominio.com/sitemap.xml
