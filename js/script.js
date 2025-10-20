@@ -78,6 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
     const numero = "59891900344";
+    const urlWhatsApp = `https://wa.me/${numero}?text=${mensaje}`;
 
     // Detectar si es un dispositivo móvil
     const esMovil = /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(navigator.userAgent);
@@ -86,17 +87,20 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    // 💡 Abrir WhatsApp app nativa directamente
-    const url = `whatsapp://send?phone=${numero}&text=${mensaje}`;
-    window.location.href = url;
-
-    // Mostrar pop-up de confirmación
+    // Mostrar pop-up de confirmación primero
     popup.style.display = "flex";
+
+    // Guardar el enlace para abrirlo después
+    cerrarPopup.onclick = function () {
+      popup.style.display = "none";
+      form.reset();
+      // Abrir WhatsApp recién ahora (acción del usuario)
+      window.location.href = urlWhatsApp;
+    };
   });
 
-  // Cerrar pop-up
+  // Si el usuario cierra el pop-up sin enviar
   cerrarPopup.addEventListener("click", () => {
     popup.style.display = "none";
-    form.reset();
   });
 });
